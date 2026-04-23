@@ -86,8 +86,8 @@ function getTaskWeights() {
   let t = operationCount;
   return {
     transcribe: 1.0,
-    image: constrain(map(t, 10, 30, 0, 1.0), 0, 1.0),
-    transaction: constrain(map(t, 30, 50, 0, 1.0), 0, 1.0),
+    image: constrain(map(t, 5, 25, 0, 1.0), 0, 1.0),
+    transaction: constrain(map(t, 25, 45, 0, 1.0), 0, 1.0),
   };
 }
 
@@ -361,7 +361,7 @@ function drawLoginScreen() {
 
 function buildMilestones() {
   milestones.push({
-    at: 10, triggered: false, fn: () => {
+    at: 5, triggered: false, fn: () => {
       addHistory("");
       addHistory("<y>NOTICE</y>: We are proud to announce that the Company has partnered with Anthropic AI.");
       addHistory("<dim>The new AI Automation R&D team starts today! Be sure to show them a warm welcome.</dim>");
@@ -370,7 +370,7 @@ function buildMilestones() {
   });
 
   milestones.push({
-    at: 15, triggered: false, fn: () => {
+    at: 10, triggered: false, fn: () => {
       addHistory("");
       addHistory("<y>NOTICE</y>: As the Company moves into the next financial quarter, we regret to");
       addHistory("announce a series of layoffs. You may notice the absence of the AI Automation R&D team.");
@@ -383,7 +383,7 @@ function buildMilestones() {
   });
 
   milestones.push({
-    at: 20, triggered: false, fn: () => {
+    at: 15, triggered: false, fn: () => {
       addHistory("");
       addHistory("<y>NOTICE</y>: The Company will begin logging performance on all Human Processing");
       addHistory("computers for internal use. Employees with questions about data privacy should");
@@ -394,7 +394,7 @@ function buildMilestones() {
   });
 
   milestones.push({
-    at: 25, triggered: false, fn: () => {
+    at: 20, triggered: false, fn: () => {
       addHistory("");
       addHistory("<y>NOTICE</y>: Average operation speed of <y>Human Processing Unit #5304</y>: 0.2/sec.");
       addHistory("Average operation speed of <y>Artificial Processing Node 5304</y> (testing): <r>4000/sec</r>.");
@@ -405,7 +405,7 @@ function buildMilestones() {
   });
 
   milestones.push({
-    at: 30, triggered: false, fn: () => {
+    at: 25, triggered: false, fn: () => {
       addHistory("");
       addHistory("<y>NOTICE</y>: The Company is pleased to announce the full integration of");
       addHistory("<y>Claude Opus 4.1</y> into all Human Processing workspaces, trained on");
@@ -933,7 +933,7 @@ function tickAPN() {
 
   textSpeed *= 0.75;
 
-  if (operationCount >= 35) {
+  if (operationCount >= 30) {
     triggerEnding();
     return;
   }
